@@ -1,0 +1,46 @@
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="addOfficeSections"   routerLink="/addofficeSection" class="nav-link">Create OfficeSection Name</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="officeSectionsList" routerLink="/officeSectionlist" class="nav-link">All OfficeSection</a>
+    </li>
+  </ul>
+</nav> -->
+<!-- <app-navbar></app-navbar> -->
+<div class="cardbook">
+    <div class="body">
+        <div class="col-md-6 offset-md-3">
+            <h3>Add OfficeSection</h3>
+                <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                  <div class="form-floating mb-3">
+                    <label for="bookName">Document Type</label>
+    
+                     <input type="text" class="form-control" id="officeid" [(ngModel)]="addOfficeSection1.documentType" name="documentType" required 
+                        maxlength="21" #bookid="ngModel" [ngClass]="{ 'is-invalid': f.submitted && officeid.invalid }"
+                        [ngModelOptions]="{standalone: true}" placeholder="Enter Document Type">
+                  <div *ngIf="(officeid.touched||f.submitted )&& officeid.errors?.['required']" class="invalid-feedback">
+                
+                        Document Type is required.
+                
+                   </div>
+                
+                    </div>
+                    <div class="form-floating mb-3">
+                    <label for="floatingInput"></label>
+                    <input type="date" class="form-control" id="officeid" [(ngModel)]="addOfficeSection1.endDate" name="endDate" required
+                      maxlength="21" #officeid="ngModel" [ngClass]="{ 'is-invalid': f.submitted && officeid.invalid }"
+                      [ngModelOptions]="{standalone: true}" placeholder="Enter endDate">
+                    <div *ngIf="(officeid.touched||f.submitted )&& officeid.errors?.['required']" class="invalid-feedback">
+                        endDate is required.
+                     </div>
+            
+                    <button class="btn btn-success" type ="submit">Submit</button> 
+                
+           
+            
+             </div>
+
+            
+              
